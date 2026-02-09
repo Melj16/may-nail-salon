@@ -35,6 +35,7 @@ export function ContactSection() {
             >
               {/* Required hidden input for Netlify */}
               <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="subject" value="New Website Contact Submission" />
 
               {/* Name */}
               <div>
