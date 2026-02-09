@@ -30,6 +30,7 @@ export function ContactSection() {
             <form
               name="contact"
               method="POST"
+              action="/contact?success=true"
               data-netlify="true"
               className="mt-4 space-y-6"
             >
