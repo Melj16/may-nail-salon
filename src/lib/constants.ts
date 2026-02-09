@@ -38,7 +38,7 @@ export const PEDICURE_TREATMENTS: Treatment[] = [
     trimming, shaping, and cuticle care—followed by a <span class="text-amber-300">NaturalSpa Pedi Soak</span>, \
     <span class="text-amber-300">Collagen Sugar Scrub</span>, and a deeply hydrating <span class="text-amber-300">Pedi Mask</span>. \
     This service is enhanced with a warm <span class="text-amber-300">paraffin wax treatment</span> for extra softness and rejuvenation. \
-    Enjoy a luxurious <span class="text-amber-300">20-minute massage using Collagen Massage Cream</span>, \
+    Enjoy a luxurious <span class="text-amber-300">20-minute massage using Collagen Massage Cream</span> while a candle is lit, \
     then finish with a polish application for beautifully renewed feet.\
     
     <p class="text-amber-300 underline font-semibold">Choose any scent of your choice!</p>`,
