@@ -1,21 +1,4 @@
-"use client";
-
 export function ContactSection() {
-  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-  
-    await fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData as any).toString(),
-    });
-  
-    alert("Message sent!");
-    form.reset();
-  };
-
   return (
     <section id="contact" className="scroll-mt-24 bg-blue-950 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -49,64 +32,53 @@ export function ContactSection() {
               method="POST"
               data-netlify="true"
               className="mt-4 space-y-6"
-              onSubmit={handleSubmit}
             >
               {/* Required hidden input for Netlify */}
               <input type="hidden" name="form-name" value="contact" />
               <input type="hidden" name="subject" value="New Website Contact Submission" />
 
               {/* Name */}
-              <div>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                  className="w-full rounded-lg border-0 border-b-1 bg-slate-900 px-4 py-3 text-white placeholder-slate-400 focus:border-amber-300 focus:outline-none"
-                />
-              </div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                className="w-full rounded-lg border-0 border-b-1 bg-slate-900 px-4 py-3 text-white placeholder-slate-400 focus:border-amber-300 focus:outline-none"
+              />
 
               {/* Email */}
-              <div>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  required
-                  className="w-full rounded-lg border-0 border-b-1 bg-slate-900 px-4 py-3 text-white placeholder-slate-400 focus:border-amber-300 focus:outline-none"
-                />
-              </div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                className="w-full rounded-lg border-0 border-b-1 bg-slate-900 px-4 py-3 text-white placeholder-slate-400 focus:border-amber-300 focus:outline-none"
+              />
 
               {/* Phone */}
-              <div>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  className="w-full rounded-lg border-0 border-b-1 bg-slate-900 px-4 py-3 text-white placeholder-slate-400 focus:border-amber-300 focus:outline-none"
-                />
-              </div>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                className="w-full rounded-lg border-0 border-b-1 bg-slate-900 px-4 py-3 text-white placeholder-slate-400 focus:border-amber-300 focus:outline-none"
+              />
 
               {/* Message */}
-              <div>
-                <textarea
-                  name="message"
-                  rows={4}
-                  placeholder="Message"
-                  required
-                  className="w-full rounded-lg border-0 border-b-1 bg-slate-900 px-4 py-3 text-white placeholder-slate-400 focus:border-amber-300 focus:outline-none"
-                ></textarea>
-              </div>
+              <textarea
+                name="message"
+                rows={4}
+                placeholder="Message"
+                required
+                className="w-full rounded-lg border-0 border-b-1 bg-slate-900 px-4 py-3 text-white placeholder-slate-400 focus:border-amber-300 focus:outline-none"
+              ></textarea>
 
               {/* Submit */}
-              <div className="flex items-center justify-center">
-                <button
-                  type="submit"
-                  className="rounded-lg bg-amber-300 px-8 py-3 text-sm font-bold text-slate-900 transition hover:bg-amber-500"
-                >
-                  Send Message
-                </button>
-              </div>
+              <button
+                type="submit"
+                className="rounded-lg bg-amber-300 px-8 py-3 text-sm font-bold text-slate-900 transition hover:bg-amber-500"
+              >
+                Send Message
+              </button>
             </form>
           </div>
 
