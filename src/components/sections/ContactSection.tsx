@@ -1,4 +1,36 @@
+"use client"; // Needed because we use fetch and state for interactivity
+
+import { useState } from "react";
+
 export function ContactSection() {
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("idle");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  };
+
   return (
     <section id="contact" className="scroll-mt-24 bg-blue-950 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -31,54 +63,69 @@ export function ContactSection() {
               name="contact"
               method="POST"
               data-netlify="true"
+              onSubmit={handleSubmit}
               className="mt-4 space-y-6"
             >
-              {/* Required hidden input for Netlify */}
+              {/* Hidden inputs required for Netlify detection */}
               <input type="hidden" name="form-name" value="contact" />
               <input type="hidden" name="subject" value="New Website Contact Submission" />
 
-              {/* Name */}
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                required
-                className="w-full rounded-lg border-0 border-b-1 bg-slate-900 px-4 py-3 text-white placeholder-slate-400 focus:border-amber-300 focus:outline-none"
-              />
+              <div>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                  className="w-full rounded-lg border-0 border-b-1 bg-slate-900 px-4 py-3 text-white placeholder-slate-400 focus:border-amber-300 focus:outline-none"
+                />
+              </div>
 
-              {/* Email */}
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                required
-                className="w-full rounded-lg border-0 border-b-1 bg-slate-900 px-4 py-3 text-white placeholder-slate-400 focus:border-amber-300 focus:outline-none"
-              />
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                  className="w-full rounded-lg border-0 border-b-1 bg-slate-900 px-4 py-3 text-white placeholder-slate-400 focus:border-amber-300 focus:outline-none"
+                />
+              </div>
 
-              {/* Phone */}
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                className="w-full rounded-lg border-0 border-b-1 bg-slate-900 px-4 py-3 text-white placeholder-slate-400 focus:border-amber-300 focus:outline-none"
-              />
+              <div>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  className="w-full rounded-lg border-0 border-b-1 bg-slate-900 px-4 py-3 text-white placeholder-slate-400 focus:border-amber-300 focus:outline-none"
+                />
+              </div>
 
-              {/* Message */}
-              <textarea
-                name="message"
-                rows={4}
-                placeholder="Message"
-                required
-                className="w-full rounded-lg border-0 border-b-1 bg-slate-900 px-4 py-3 text-white placeholder-slate-400 focus:border-amber-300 focus:outline-none"
-              ></textarea>
+              <div>
+                <textarea
+                  name="message"
+                  rows={4}
+                  placeholder="Message"
+                  required
+                  className="w-full rounded-lg border-0 border-b-1 bg-slate-900 px-4 py-3 text-white placeholder-slate-400 focus:border-amber-300 focus:outline-none"
+                ></textarea>
+              </div>
 
-              {/* Submit */}
-              <button
-                type="submit"
-                className="rounded-lg bg-amber-300 px-8 py-3 text-sm font-bold text-slate-900 transition hover:bg-amber-500"
-              >
-                Send Message
-              </button>
+              <div className="flex flex-col items-center gap-4">
+                <button
+                  type="submit"
+                  className="rounded-lg bg-amber-300 px-8 py-3 text-sm font-bold text-slate-900 transition hover:bg-amber-500"
+                >
+                  Send Message
+                </button>
+
+                {status === "success" && (
+                  <p className="text-green-400 font-medium">Message sent!</p>
+                )}
+                {status === "error" && (
+                  <p className="text-red-400 font-medium">
+                    Something went wrong. Please try again.
+                  </p>
+                )}
+              </div>
             </form>
           </div>
 
