@@ -1,3 +1,5 @@
+"use client";
+
 export function ContactSection() {
   const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
