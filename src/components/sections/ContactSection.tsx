@@ -1,4 +1,19 @@
 export function ContactSection() {
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+  
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData as any).toString(),
+    });
+  
+    alert("Message sent!");
+    form.reset();
+  };
+
   return (
     <section id="contact" className="scroll-mt-24 bg-blue-950 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -30,9 +45,9 @@ export function ContactSection() {
             <form
               name="contact"
               method="POST"
-              action="/contact?success=true"
               data-netlify="true"
               className="mt-4 space-y-6"
+              onSubmit={handleSubmit}
             >
               {/* Required hidden input for Netlify */}
               <input type="hidden" name="form-name" value="contact" />
