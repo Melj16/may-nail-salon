@@ -83,7 +83,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-sm text-slate-300">
               <li>Mon – Fri: 9am – 7pm</li>
               <li>Saturday: 9am – 6pm</li>
-              <li>Sunday: 10am - 5pm</li>
+              <li>Sunday: 10am – 5pm</li>
             </ul>
           </div>
 

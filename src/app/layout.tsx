@@ -26,9 +26,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "May Nail Spa | Premium Nail Care",
+  title: "May Nails Spa | North Easton, MA",
   description:
-    "Welcome to May Nail Spa. Expert manicures, pedicures, and nail art. Quality service in a relaxing atmosphere.",
+    "Welcome to May Nails Spa, a premium nail salon located in North Easton, MA. Expert manicures, pedicures, and nail art. Quality service in a relaxing atmosphere.",
 };
 
 export default function RootLayout({

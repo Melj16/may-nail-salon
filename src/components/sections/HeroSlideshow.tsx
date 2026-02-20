@@ -33,11 +33,13 @@ export function HeroSlideshow() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => prev + 1);
+      setCurrentIndex((prev) =>
+        prev === extendedSlides.length - 1 ? prev : prev + 1
+      );
     }, 5000);
-
+  
     return () => clearInterval(timer);
-  }, []);
+  }, [extendedSlides.length]);
 
   const handleTransitionEnd = () => {
     if (currentIndex === extendedSlides.length - 1) {

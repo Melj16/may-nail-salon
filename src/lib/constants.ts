@@ -1,6 +1,6 @@
 import type { GalleryImage, NavLink, Service, Testimonial, Treatment } from "@/types";
 
-export const SITE_NAME = "May Nail Spa";
+export const SITE_NAME = "May Nails Spa";
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "/" },
