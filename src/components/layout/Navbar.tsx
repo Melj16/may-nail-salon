@@ -36,7 +36,7 @@ export function Navbar() {
           onClick={() => setShowModal(true)}
           className="relative w-full cursor-pointer bg-amber-400 text-black text-center text-sm font-semibold py-2 hover:bg-amber-300 transition"
         >
-          🎉 10% OFF for First-Time Customers!
+          🎉 15% OFF for Students!
 
           <button
             onClick={(e) => {
@@ -154,7 +154,7 @@ export function Navbar() {
             </h2>
 
             <p className="mb-6 text-gray-600">
-              Enjoy <span className="font-semibold text-amber-500">10% OFF</span> your first visit at May Nails Spa.
+              Students enjoy <span className="font-semibold text-amber-500">15% OFF</span> their visit at May Nails Spa.
             </p>
 
             <Link
@@ -166,7 +166,7 @@ export function Navbar() {
             </Link>
 
             <p className="text-xs text-slate-500">
-              Note: Coupon is valid for first time customers only. In order to redeem coupon, please show a screenshot of this coupon to the front desk after your appointment.
+              Note: Coupon is valid for students only. In order to redeem coupon, please show a valid Student ID to the front desk after your appointment.
             </p>
           </div>
         </div>
