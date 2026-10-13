@@ -36,7 +36,7 @@ export function Navbar() {
           onClick={() => setShowModal(true)}
           className="relative w-full cursor-pointer bg-amber-400 text-black text-center text-sm font-semibold py-2 hover:bg-amber-300 transition"
         >
-          🎉 15% OFF for Students!
+          🎉 15% OFF Monday through Wednesday!
 
           <button
             onClick={(e) => {
@@ -154,7 +154,7 @@ export function Navbar() {
             </h2>
 
             <p className="mb-6 text-gray-600">
-              Students enjoy <span className="font-semibold text-amber-500">15% OFF</span> their visit at May Nails Spa.
+              Enjoy <span className="font-semibold text-amber-500">15% OFF</span> on services on Monday, Tuesday, or Wednesday every week.
             </p>
 
             <Link
@@ -166,7 +166,7 @@ export function Navbar() {
             </Link>
 
             <p className="text-xs text-slate-500">
-              Note: Coupon is valid for students only. In order to redeem coupon, please show a valid Student ID to the front desk after your appointment.
+              Note: Promotion is only valid on the specified days. Please show coupon when checking out at the front desk.
             </p>
           </div>
         </div>
