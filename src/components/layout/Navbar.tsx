@@ -36,7 +36,7 @@ export function Navbar() {
           onClick={() => setShowModal(true)}
           className="relative w-full cursor-pointer bg-amber-400 text-black text-center text-sm font-semibold py-2 hover:bg-amber-300 transition"
         >
-          🎉 15% OFF Monday through Wednesday!
+          🎉 10% OFF Monday through Wednesday!
 
           <button
             onClick={(e) => {
@@ -154,7 +154,7 @@ export function Navbar() {
             </h2>
 
             <p className="mb-6 text-gray-600">
-              Enjoy <span className="font-semibold text-amber-500">15% OFF</span> on services on Monday, Tuesday, or Wednesday every week.
+              Enjoy <span className="font-semibold text-amber-500">10% OFF</span> on services on Monday, Tuesday, or Wednesday every week.
             </p>
 
             <Link
